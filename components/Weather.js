@@ -17,11 +17,14 @@ export default function Weather(props) {
         if (props.zipCode) {
             fetch(`http://api.openweathermap.org/data/2.5/weather?q=${props.zipCode},th&units=metric&APPID=${apiKey}`)
                 .then((response) => response.json())
+
                 .then((json) => {
+                    console.log('json: ', json.weather)
+                    // console.log(json.weather[0].main)
                     setForecastInfo({
                         main: json.weather[0].main,
                         description: json.weather[0].description,
-                        temp: json.main.temp
+                        temp: json.main.temp,
                     });
                 })
                 .catch((error) => {

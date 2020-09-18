@@ -7,7 +7,7 @@ import Weather from './components/Weather'
 const App = () => {
   return (
     <View style={styles.container}>
-      <Weather zipCode="82000"/> 
+      <Weather zipCode="92000"/> 
     </View>
   );
 };
